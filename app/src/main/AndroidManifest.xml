@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.plantplanet.android">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA" />
 
@@ -13,27 +17,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".activities.SignUpActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.SignInActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.loginsignup"
-            android:exported="false" />
-        <activity
-            android:name=".activities.login"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".login"
+            android:name=".activities.SignInActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".activities.HomeActivity">
+
+
+        </activity>
+
         <activity android:name=".activities.CheckActivity" />
         <activity android:name=".activities.DiseaseActivity" />
         <activity android:name=".activities.LibraryActivity" />
@@ -55,13 +58,6 @@
         <activity
             android:name=".activities.MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".activities.HomeActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
